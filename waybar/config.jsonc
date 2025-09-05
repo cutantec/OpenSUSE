@@ -5,9 +5,9 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["sway/mode","cpu","memory","network","mpd"],
-"modules-center": ["sway/workspaces","hyprland/workspaces"],
-"modules-right":  ["tray","idle_inhibitor","pulseaudio","backlight","battery","clock"],
+"modules-left": ["cpu","memory","network","custom/cava"],
+"modules-center": ["hyprland/workspaces"],
+"modules-right":  ["tray","pulseaudio","backlight","battery","clock"],
 
 "battery": {
   "states": {
@@ -141,4 +141,11 @@
     "exec": "echo '{\"class\": \"audio recording\"}'",
     "exec-if": "pgrep ffmpeg",
 },
+  "custom/cava": {
+  "exec": "~/.config/waybar/scripts/cava.sh",
+    "format": "♪ {}",
+    "on-click-middle": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-left": "playerctl previous"
+  },
 }
