@@ -13,31 +13,33 @@ window#waybar {
 #workspaces {
     margin-top: 3px;
     margin-bottom: 2px;
-    margin-right: 15px;  /* 原本 10，略微增加 */
-    margin-left: 15px;   /* 原本 25，调小以平衡 */
+    margin-right: 10px;
+    margin-left: 25px;
 }
 
 #workspaces button {
     border-radius: 15px;
-    margin-right: 8px;   /* 原本 10，调小一点更紧凑 */
-    padding: 1px 12px;   /* 原本 1px 10px，稍微均衡 */
+    margin-right: 10px;
+    padding: 1px 10px;
     font-weight: bolder;
     background-color: transparent;
 }
 
 #workspaces button.active,
 #workspaces button.focused {
-    padding: 0 20px; /* 原本 22，略微收紧，保持一致 */
+    padding: 0 22px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
                 rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
                 rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     background: transparent;
 }
 
-/* 其他模块：统一 padding */
 #tray,
 #mpd,
 #custom-weather,
+#custom-cava {
+    padding:5px
+}
 #cpu,
 #temperature, 
 #memory {
