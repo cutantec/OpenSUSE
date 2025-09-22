@@ -7,7 +7,7 @@
 
 "modules-left": ["cpu","memory","network","custom/cava"],
 "modules-center": ["hyprland/workspaces"],
-"modules-right":  ["tray","pulseaudio","backlight","battery","clock"],
+"modules-right":  ["tray","pulseaudio","backlight","battery","clock","custom/ss_nf"],
 
 "battery": {
   "states": {
@@ -155,5 +155,12 @@
     "on-click-middle": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-left": "playerctl previous"
+  },
+   "custom/ss_nf": {
+     "exec": "~/.config/waybar/scripts/screenshot_notification.sh",
+        "interval": 60,
+        "return-type": "json",
+        "format": "{}",
+        "max-length": 100
   },
 }
