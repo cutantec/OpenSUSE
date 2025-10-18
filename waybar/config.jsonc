@@ -5,7 +5,7 @@
 "margin-bottom":0,
 "margin-top":0,
 
-"modules-left": ["cpu","memory","network","custom/cava"],
+"modules-left": ["cpu","memory","network","mpd","custom/cava"],
 "modules-center": ["hyprland/workspaces"],
 "modules-right":  ["tray","pulseaudio","backlight","battery","clock","custom/ss_nf"],
 
@@ -52,7 +52,7 @@
 "cpu": {
     "format": "&#8239;{usage}%",
     "tooltip": false,
-    "on-click": "kitty -e 'htop'"
+    "on-click": "kitty -e 'btop'"
 },
 "memory": {
     "interval": 30,
@@ -107,8 +107,8 @@
   },
   "on-click": "pavucontrol"
 },
-"mpd": {
-  "format": "{stateIcon} {artist} - {title}",
+ "mpd": {
+  "format": "{stateIcon} {title}",
   "format-disconnected": "🎶",
   "format-stopped": "♪",
   "interval": 10,
@@ -126,13 +126,39 @@
     "on": "1 "
   },
   "state-icons": {
-    "paused": "",
-    "playing": ""
+    "playing": "",
+    "paused": ""
   },
   "tooltip-format": "MPD (connected)",
   "tooltip-format-disconnected": "MPD (disconnected)",
   "max-length": 35
 },
+/* "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    "interval": 10,
+    "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+       // "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+    },
+    "repeat-icons": {
+        "on": " "
+    },
+    "single-icons": {
+        "on": "1 "
+    },
+    "state-icons": {
+        "paused": "",
+        "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+},
+*/
 "custom/recorder": {
     "format": " Rec",
     "format-disabled": " Off-air", //An empty format will hide the module.
@@ -151,12 +177,12 @@
 },
   "custom/cava": {
   "exec": "~/.config/waybar/scripts/cava.sh",
-    "format": "♪ {}",
+    "format": " {}",
     "on-click-middle": "playerctl play-pause",
     "on-click-right": "playerctl next",
     "on-click-left": "playerctl previous"
   },
-   "custom/ss_nf": {
+  "custom/ss_nf": {
      "exec": "~/.config/waybar/scripts/screenshot_notification.sh",
         "interval": 60,
         "return-type": "json",
